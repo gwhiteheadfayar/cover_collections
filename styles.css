@@ -1,0 +1,192 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222;
+}
+.box{
+    position: relative;
+    display: flex;
+}
+.box .item{
+  position: absolute;
+  top: calc(50% - 300px);
+  left: calc(50% - 100px);
+  width: 250px;
+  height: 450px;
+  transition: 0.25s;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 5em;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.box .item img {
+    width: 100%;
+    height: 100%; /* Leave some space for the collection name */
+    object-fit:contain;
+}
+
+.box .item p {
+    padding: 5px;
+    text-align: center;
+    font-size: 0.15em;
+}
+
+.box .item:nth-child(1){
+    transform: translate3d(-180%,0,0) scale(0.1);
+    opacity: 0.1;
+    z-index: 1;
+    color:#ffffff20;
+}
+
+.box .item:nth-child(2){
+    transform: translate3d(-155%,0,0) scale(0.35);
+    opacity: 0.35;
+    z-index: 2;
+    color:#ffffff7f;
+}
+
+.box .item:nth-child(3){
+    transform: translate3d(-95%,0,0) scale(0.75);
+    opacity: 0.75;
+    z-index: 3;
+    font-size: 6em;
+    color:#ffffffba;
+}
+
+/* middle cover */
+.box .item:nth-child(4){
+    transform: translate3d(0%,0,0) scale(1);
+    opacity: 1;
+    z-index: 4;
+    font-size: 8em;
+}
+
+.box .item:nth-child(5){
+    transform: translate3d(95%,0,0) scale(0.75);
+    opacity: 0.75;
+    z-index: 3;
+    font-size: 6em;
+    color:#ffffffba;
+}
+
+.box .item:nth-child(6){
+    transform: translate3d(155%,0,0) scale(0.35);
+    opacity: 0.35;
+    z-index: 2;
+    color:#ffffff7f;
+}
+
+.box .item:nth-child(7){
+    transform: translate3d(180%,0,0) scale(0.1);
+    opacity: 0.1;
+    z-index: 1;
+    color:#ffffff20;
+}
+
+/* moving cards on seleciton */
+.related-books {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 230px;
+    background: rgba(0, 0, 0, 0.5);
+    overflow-x: auto;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.related-book {
+    width: 100px;
+    height: 200px;
+    margin: 0 5px;
+    transition: transform 0.3s ease-out;
+    transform: translateY(100%);
+    animation: slideUp 0.3s forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.related-book img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.related-book p {
+    margin-top: 5px;
+    font-size: 0.8em;
+    text-align: center;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#ffffff;
+    text-wrap:pretty;
+}
+
+@keyframes slideUp {
+    to {
+        transform: translateY(0);
+    }
+}
+
+.author-info {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    text-align: right;
+    
+}
+
+.author-info p {
+    font-family: Arial,Helvetica, sans-serif;
+    color: #ffffff;
+    font-size: 1em;
+    margin: 0;
+}
+
+.title {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    font-family: "Playfair Display", serif;
+    color: #ffffff;
+    font-size: 3em;
+    margin: 0;
+    text-align: center;
+}
+
+.experimental-notice {
+    position: absolute;
+    bottom: 210px;
+    right: 20px;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 0.8em;
+    margin: 0;
+}
